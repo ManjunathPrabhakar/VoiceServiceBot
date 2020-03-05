@@ -61,6 +61,7 @@ public class STT extends AppCompatActivity {
                     ArrayList<String> result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     Log.d("DATA", result.get(0));
+                    MainActivity.setText(result.get(0));
                     finish();
                 }
                 break;

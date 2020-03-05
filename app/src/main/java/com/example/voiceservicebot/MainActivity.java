@@ -17,6 +17,7 @@ import android.speech.RecognizerIntent;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.voiceservicebot.rough.BroadcastClass;
 import com.example.voiceservicebot.services.VoiceService;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static int MUTE = 0;
     private final int REQ_CODE_SPEECH_INPUT = 100;
+    public static TextView tv;
 
     Button btnStartService, btnStopService, btnCustomNotify;
     public static final String CHANNEL_ID = "notifyChannel";
@@ -52,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        tv = findViewById(R.id.voicedata);
+
 
     }
 
@@ -67,5 +71,8 @@ public class MainActivity extends AppCompatActivity {
         stopService(serviceIntent);
     }
 
+    public static void setText(String data){
+        tv.setText(data);
+    }
 
 }
